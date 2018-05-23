@@ -1,1 +1,1 @@
-initSidebarItems({});
+initSidebarItems({"fn":[["rosenbrock","Rosenbrock test function"],["rosenbrock_derivative","Derivative of 2D Rosenbrock function"],["rosenbrock_hessian","Hessian of 2D Rosenbrock function"],["sphere","Sphere test function"],["sphere_derivative","Derivative of sphere test function"]]});

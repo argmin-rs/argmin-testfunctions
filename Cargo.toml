@@ -2,5 +2,21 @@
 name = "testfunctions"
 version = "0.0.0"
 authors = ["Stefan Kroboth <stefan.kroboth@gmail.com>"]
+license = "MIT OR Apache-2.0"
+description = "Test functions for optimization algorithms"
+documentation = "https://stefan-k.github.io/testfunctions-rs/testfunctions/"
+homepage = "https://github.com/stefan-k/testfunctions-rs"
+repository = "https://github.com/stefan-k/testfunctions-rs"
+readme = "README.md"
+keywords = ["test", "function", "optimization"]
+categories = ["science", "hpc"]
+#license-file = "LICENSE-APACHE"
+exclude = [ 
+	".travis.yml",
+	"push_docs",
+]
 
 [dependencies]
+
+[badges]
+travis-ci = { repository = "stefan-k/pcde-rs", branch = "master" }

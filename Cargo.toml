@@ -17,6 +17,7 @@ exclude = [
 ]
 
 [dependencies]
+num = "*"
 
 [badges]
 travis-ci = { repository = "stefan-k/pcde-rs", branch = "master" }

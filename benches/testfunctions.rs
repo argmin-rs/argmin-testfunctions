@@ -8,8 +8,8 @@
 #![feature(test)]
 #![feature(concat_idents)]
 
-extern crate testfunctions;
 extern crate test;
+extern crate testfunctions;
 use testfunctions::*;
 
 macro_rules! make_bench {

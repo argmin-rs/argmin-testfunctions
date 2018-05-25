@@ -11,6 +11,8 @@ extern crate num;
 
 mod rosenbrock;
 mod sphere;
+mod zero;
 
 pub use rosenbrock::*;
 pub use sphere::*;
+pub use zero::*;

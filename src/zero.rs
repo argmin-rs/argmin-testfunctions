@@ -1,0 +1,32 @@
+// Copyright 2018 Stefan Kroboth
+//
+// Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
+// http://apache.org/licenses/LICENSE-2.0> or the MIT license <LICENSE-MIT or
+// http://opensource.org/licenses/MIT>, at your option. This file may not be
+// copied, modified, or distributed except according to those terms.
+
+//! # Zero
+//!
+//! Always returns `0.0`. This is only for performance tests.
+
+/// Zero test function
+#[inline(always)]
+pub fn zero<T>(_param: &[T]) -> f64 {
+    0.0
+}
+
+/// Derivative of zero test function
+pub fn zero_derivative<T>(param: &[T]) -> Vec<f64> {
+    param.iter().map(|_| 0.0).collect()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std;
+
+    #[test]
+    fn test_sphere_optimum() {
+        assert!(zero(&[0.0_f64, 0.0_f64]).abs() < std::f64::EPSILON);
+    }
+}

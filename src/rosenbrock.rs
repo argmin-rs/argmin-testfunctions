@@ -8,20 +8,27 @@
 //! # Rosenbrock function
 
 use num::{Float, FromPrimitive};
+use std::iter::Sum;
 
-/// 2D Rosenbrock test function
+/// Rosenbrock test function
 ///
 /// Parameters are usually: `a = 1` and `b = 100`
-pub fn rosenbrock<T: Float + FromPrimitive>(param: &[T], a: T, b: T) -> T {
+pub fn rosenbrock<T: Float + FromPrimitive + Sum>(param: &[T], a: T, b: T) -> T {
+    // In case it is 2D, the straight forward approach is much faster. However, the `else` part
+    // would lead to the same results.
     if let &[x, y] = param {
         (a - x).powi(2) + b * (y - x.powi(2)).powi(2)
     } else {
-        panic!("rosenbrock function only accepts 2 parameters.");
+        param
+            .iter()
+            .zip(param.iter().next())
+            .map(|(&xi, &xi1)| (a - xi).powi(2) + b * (xi1 - xi.powi(2)).powi(2))
+            .sum()
     }
 }
 
 /// Derivative of 2D Rosenbrock function
-pub fn rosenbrock_derivative<T: Float + FromPrimitive>(param: &[T], a: T, b: T) -> Vec<T> {
+pub fn rosenbrock_2d_derivative<T: Float + FromPrimitive>(param: &[T], a: T, b: T) -> Vec<T> {
     let num2 = T::from_f64(2.0).unwrap();
     let num4 = T::from_f64(4.0).unwrap();
     if let &[x, y] = param {
@@ -35,7 +42,7 @@ pub fn rosenbrock_derivative<T: Float + FromPrimitive>(param: &[T], a: T, b: T) 
 }
 
 /// Hessian of 2D Rosenbrock function
-pub fn rosenbrock_hessian<T: Float + FromPrimitive>(param: &[T], _a: T, b: T) -> Vec<T> {
+pub fn rosenbrock_2d_hessian<T: Float + FromPrimitive>(param: &[T], _a: T, b: T) -> Vec<T> {
     let num2 = T::from_f64(2.0).unwrap();
     let num4 = T::from_f64(4.0).unwrap();
     let num12 = T::from_f64(12.0).unwrap();
@@ -61,26 +68,25 @@ mod tests {
     use std;
 
     #[test]
-    fn test_rosenbrock_optimum() {
+    fn test_rosenbrock_optimum_2d() {
         assert!(rosenbrock(&[1.0_f32, 1.0_f32], 1.0, 100.0).abs() < std::f32::EPSILON);
         assert!(rosenbrock(&[1.0, 1.0], 1.0, 100.0).abs() < std::f64::EPSILON);
     }
 
     #[test]
     fn test_rosenbrock_derivative() {
-        let res: Vec<f64> = rosenbrock_derivative(&[1.0, 1.0], 1.0, 100.0);
+        let res: Vec<f64> = rosenbrock_2d_derivative(&[1.0, 1.0], 1.0, 100.0);
         for elem in &res {
             assert!((elem - 0.0).abs() < std::f64::EPSILON);
         }
-        let res: Vec<f32> = rosenbrock_derivative(&[1.0_f32, 1.0_f32], 1.0_f32, 100.0_f32);
+        let res: Vec<f32> = rosenbrock_2d_derivative(&[1.0_f32, 1.0_f32], 1.0_f32, 100.0_f32);
         for elem in &res {
             assert!((elem - 0.0).abs() < std::f32::EPSILON);
         }
     }
 
     #[test]
-    #[should_panic]
-    fn test_rosenbrock_not_2d() {
-        rosenbrock(&[1.0, 1.0, 1.0], 1.0, 100.0);
+    fn test_rosenbrock_optimum_3d() {
+        assert!(rosenbrock(&[1.0, 1.0, 1.0], 1.0, 100.0).abs() < std::f64::EPSILON);
     }
 }

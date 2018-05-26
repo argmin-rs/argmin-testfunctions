@@ -18,14 +18,22 @@ use std::iter::Sum;
 
 /// Sphere test function
 ///
-/// Defined for all `x \in (-\infty, \infty)`
+/// Defined as
+///
+/// `f(x_1, x_2, ..., x_n) = \sum_{i=1}^n x_i^2
+///
+/// where `x_i \in (-\infty, \infty)` and `n > 0`.
 pub fn sphere<T: Float + FromPrimitive + Sum>(param: &[T]) -> T {
     param.iter().map(|x| x.powi(2)).sum()
 }
 
 /// Derivative of sphere test function
 ///
-/// Defined for all `x \in (-\infty, \infty)`
+/// Defined as
+///
+/// `f(x_1, x_2, ..., x_n) = (2 * x_1, 2 * x_2, ... 2 * x_n)`
+///
+/// where `x_i \in (-\infty, \infty)` and `n > 0`.
 pub fn sphere_derivative<T: Float + FromPrimitive>(param: &[T]) -> Vec<T> {
     let num2 = T::from_f64(2.0).unwrap();
     param.iter().map(|x| num2 * *x).collect()

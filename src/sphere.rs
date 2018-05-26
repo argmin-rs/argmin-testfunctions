@@ -9,7 +9,7 @@
 //!
 //! Defined as
 //!
-//! `f(x) = \sum_{i=1}^n x_i^2
+//! `f(x) = \sum_{i=1}^n x_i^2`
 //!
 //! where `x_i \in (-\infty, \infty)`
 

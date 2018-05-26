@@ -27,7 +27,7 @@ mod tests {
     use std;
 
     #[test]
-    fn test_sphere_optimum() {
+    fn test_zero() {
         assert!(zero(&[0.0_f64, 0.0_f64]).abs() < std::f64::EPSILON);
     }
 }

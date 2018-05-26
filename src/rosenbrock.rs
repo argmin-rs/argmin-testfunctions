@@ -14,16 +14,18 @@ use std::iter::Sum;
 ///
 /// Parameters are usually: `a = 1` and `b = 100`
 pub fn rosenbrock<T: Float + FromPrimitive + Sum>(param: &[T], a: T, b: T) -> T {
-    // In case it is 2D, the straight forward approach is much faster. However, the `else` part
-    // would lead to the same results.
-    if let &[x, y] = param {
-        (a - x).powi(2) + b * (y - x.powi(2)).powi(2)
-    } else {
         param
             .iter()
             .zip(param.iter().next())
             .map(|(&xi, &xi1)| (a - xi).powi(2) + b * (xi1 - xi.powi(2)).powi(2))
             .sum()
+}
+
+pub fn rosenbrock_2d<T: Float + FromPrimitive>(param: &[T], a: T, b: T) -> T {
+    if let &[x, y] = param {
+        (a - x).powi(2) + b * (y - x.powi(2)).powi(2)
+    } else {
+        panic!("rosenbrock_2d only works for a parameter vector with two values.");
     }
 }
 
@@ -88,5 +90,11 @@ mod tests {
     #[test]
     fn test_rosenbrock_optimum_3d() {
         assert!(rosenbrock(&[1.0, 1.0, 1.0], 1.0, 100.0).abs() < std::f64::EPSILON);
+    }
+
+    #[test]
+    #[should_panic]
+    fn test_rosenbrock_2d_with_nd() {
+        rosenbrock_2d(&[1.0, 1.0, 1.0], 1.0, 100.0);
     }
 }

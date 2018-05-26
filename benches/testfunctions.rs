@@ -28,6 +28,7 @@ mod tests {
     use test::{black_box, Bencher};
 
     make_bench!(rosenbrock(&vec![-43.0, 53.0, 3.4], 1_f64, 100_f64));
+    make_bench!(rosenbrock_2d(&vec![-43.0, 53.0], 1_f64, 100_f64));
     make_bench!(rosenbrock_2d_derivative(&vec![-43.0, 53.0], 1_f64, 100_f64));
     make_bench!(rosenbrock_2d_hessian(&vec![-43.0, 53.0], 1_f64, 100_f64));
 

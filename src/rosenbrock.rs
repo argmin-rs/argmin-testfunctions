@@ -6,13 +6,27 @@
 // copied, modified, or distributed except according to those terms.
 
 //! # Rosenbrock function
+//!
+//! In 2D, it is definde as
+//!
+//! `f(x_1, x_2) = (a - x_1)^2 + b * (x_2 - x_1^2)^2`
+//!
+//! where `x_i \in (-\infty, \infty)`. The parameters a and b usually are: `a = 1` and `b = 100`.
+//!
+//! The multidimensional Rosenbrock function is defined as:
+//!
+//! `f(x_1, x_2, ..., x_n) = \sum_{i=1}^{n-1} \left[ (a - x_i)^2 + b * (x_{i+1} - x_i^2)^2 \right}`
 
 use num::{Float, FromPrimitive};
 use std::iter::Sum;
 
-/// Rosenbrock test function
+/// Multidimensional Rosenbrock test function
 ///
-/// Parameters are usually: `a = 1` and `b = 100`
+/// Defined as
+///
+/// `f(x_1, x_2, ..., x_n) = \sum_{i=1}^{n-1} \left[ (a - x_i)^2 + b * (x_{i+1} - x_i^2)^2 \right}`
+///
+/// where `x_i \in (-\infty, \infty)`. The parameters a and b usually are: `a = 1` and `b = 100`.
 pub fn rosenbrock<T: Float + FromPrimitive + Sum>(param: &[T], a: T, b: T) -> T {
     param
         .iter()
@@ -21,6 +35,15 @@ pub fn rosenbrock<T: Float + FromPrimitive + Sum>(param: &[T], a: T, b: T) -> T 
         .sum()
 }
 
+/// 2D Rosenbrock test function
+///
+/// Defined as
+///
+/// `f(x_1, x_2) = (a - x_1)^2 + b * (x_2 - x_1^2)^2`
+///
+/// where `x_i \in (-\infty, \infty)`. The parameters a and b usually are: `a = 1` and `b = 100`.
+///
+/// For 2D problems, this function is much faster than `rosenbrock`.
 pub fn rosenbrock_2d<T: Float + FromPrimitive>(param: &[T], a: T, b: T) -> T {
     if let &[x, y] = param {
         (a - x).powi(2) + b * (y - x.powi(2)).powi(2)

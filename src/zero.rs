@@ -17,7 +17,7 @@ pub fn zero<T>(_param: &[T]) -> f64 {
 
 /// Derivative of zero test function
 pub fn zero_derivative<T>(param: &[T]) -> Vec<f64> {
-    param.iter().map(|_| 0.0).collect()
+    vec![0.0; param.len()]
 }
 
 #[cfg(test)]

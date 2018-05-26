@@ -14,11 +14,11 @@ use std::iter::Sum;
 ///
 /// Parameters are usually: `a = 1` and `b = 100`
 pub fn rosenbrock<T: Float + FromPrimitive + Sum>(param: &[T], a: T, b: T) -> T {
-        param
-            .iter()
-            .zip(param.iter().next())
-            .map(|(&xi, &xi1)| (a - xi).powi(2) + b * (xi1 - xi.powi(2)).powi(2))
-            .sum()
+    param
+        .iter()
+        .zip(param.iter().next())
+        .map(|(&xi, &xi1)| (a - xi).powi(2) + b * (xi1 - xi.powi(2)).powi(2))
+        .sum()
 }
 
 pub fn rosenbrock_2d<T: Float + FromPrimitive>(param: &[T], a: T, b: T) -> T {

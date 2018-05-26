@@ -9,45 +9,50 @@
 
 use num::{Float, FromPrimitive};
 
-/// Rosenbrock test function
+/// 2D Rosenbrock test function
 ///
 /// Parameters are usually: `a = 1` and `b = 100`
 pub fn rosenbrock<T: Float + FromPrimitive>(param: &[T], a: T, b: T) -> T {
-    assert!(param.len() == 2);
-    let num2 = T::from_f64(2.0).unwrap();
-    (a - param[0]).powf(num2) + b * (param[1] - param[0].powf(num2)).powf(num2)
+    if let &[x, y] = param {
+        (a - x).powi(2) + b * (y - x.powi(2)).powi(2)
+    } else {
+        panic!("rosenbrock function only accepts 2 parameters.");
+    }
 }
 
 /// Derivative of 2D Rosenbrock function
 pub fn rosenbrock_derivative<T: Float + FromPrimitive>(param: &[T], a: T, b: T) -> Vec<T> {
-    assert!(param.len() == 2);
     let num2 = T::from_f64(2.0).unwrap();
-    let num3 = T::from_f64(3.0).unwrap();
     let num4 = T::from_f64(4.0).unwrap();
-    let (x, y) = (param[0], param[1]);
-    let mut out = Vec::with_capacity(2);
-    out.push(-num2 * a + num4 * b * x.powf(num3) - num4 * b * x * y + num2 * x);
-    out.push(num2 * b * (y - x.powf(num2)));
-    out
+    if let &[x, y] = param {
+        let mut out = Vec::with_capacity(2);
+        out.push(-num2 * a + num4 * b * x.powi(3) - num4 * b * x * y + num2 * x);
+        out.push(num2 * b * (y - x.powi(2)));
+        out
+    } else {
+        panic!("rosenbrock function only accepts 2 parameters.");
+    }
 }
 
 /// Hessian of 2D Rosenbrock function
 pub fn rosenbrock_hessian<T: Float + FromPrimitive>(param: &[T], _a: T, b: T) -> Vec<T> {
-    assert!(param.len() == 2);
     let num2 = T::from_f64(2.0).unwrap();
     let num4 = T::from_f64(4.0).unwrap();
     let num12 = T::from_f64(12.0).unwrap();
-    let (x, y) = (param[0], param[1]);
-    let mut out = Vec::with_capacity(4);
-    // d/dxdx
-    out.push(num12 * b * x.powf(num2) - num4 * b * y + num2);
-    // d/dxdy
-    out.push(-num4 * b * x);
-    // d/dydx
-    out.push(-num4 * b * x);
-    // d/dydy
-    out.push(num2 * b);
-    out
+    if let &[x, y] = param {
+        let mut out = Vec::with_capacity(4);
+        // d/dxdx
+        out.push(num12 * b * x.powi(2) - num4 * b * y + num2);
+        // d/dxdy
+        out.push(-num4 * b * x);
+        // d/dydx
+        out.push(-num4 * b * x);
+        // d/dydy
+        out.push(num2 * b);
+        out
+    } else {
+        panic!("rosenbrock_hessian only accepts 2 parameters.");
+    }
 }
 
 #[cfg(test)]

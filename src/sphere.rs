@@ -26,7 +26,7 @@ use std::iter::Sum;
 ///
 /// where `x_i \in (-\infty, \infty)` and `n > 0`.
 ///
-/// The minimum is at `f(x_1, x_2, ..., x_n) = f(0, 0, ..., 0) = 0`.
+/// The global minimum is at `f(x_1, x_2, ..., x_n) = f(0, 0, ..., 0) = 0`.
 pub fn sphere<T: Float + FromPrimitive + Sum>(param: &[T]) -> T {
     param.iter().map(|x| x.powi(2)).sum()
 }

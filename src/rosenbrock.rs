@@ -30,7 +30,7 @@ use std::iter::Sum;
 ///
 /// where `x_i \in (-\infty, \infty)`. The parameters a and b usually are: `a = 1` and `b = 100`.
 ///
-/// The minimum is at `f(x_1, x_2, ..., x_n) = f(1, 1, ..., 1) = 0`.
+/// The global minimum is at `f(x_1, x_2, ..., x_n) = f(1, 1, ..., 1) = 0`.
 pub fn rosenbrock<T: Float + FromPrimitive + Sum>(param: &[T], a: T, b: T) -> T {
     param
         .iter()
@@ -49,7 +49,7 @@ pub fn rosenbrock<T: Float + FromPrimitive + Sum>(param: &[T], a: T, b: T) -> T 
 ///
 /// For 2D problems, this function is much faster than `rosenbrock`.
 ///
-/// The minimum is at `f(x_1, x_2) = f(1, 1) = 0`.
+/// The global minimum is at `f(x_1, x_2) = f(1, 1) = 0`.
 pub fn rosenbrock_2d<T: Float + FromPrimitive>(param: &[T], a: T, b: T) -> T {
     if let &[x, y] = param {
         (a - x).powi(2) + b * (y - x.powi(2)).powi(2)

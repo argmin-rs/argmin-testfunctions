@@ -11,7 +11,7 @@
 //!
 //! `f(x_1, x_2, ..., x_n) = a * n + \sum_{i=1}^{n} \left[ x_i^2 - a * cos(2 * pi * x_i) \right]`
 //!
-//! where `x_i \in [-5.12, 5.12] and a = 10`
+//! where `x_i \in [-5.12, 5.12]` and `a = 10`
 //!
 //! The global minimum is at `f(x_1, x_2, ..., x_n) = f(0, 0, ..., 0) = 0`.
 
@@ -25,7 +25,7 @@ use std::iter::Sum;
 ///
 /// `f(x_1, x_2, ..., x_n) = a * n + \sum_{i=1}^{n} \left[ x_i^2 - a * cos(2 * pi * x_i) \right]`
 ///
-/// where `x_i \in [-5.12, 5.12] and a = 10`
+/// where `x_i \in [-5.12, 5.12]` and `a = 10`
 ///
 /// The global minimum is at `f(x_1, x_2, ..., x_n) = f(0, 0, ..., 0) = 0`.
 pub fn rastrigin<T: Float + FromPrimitive + Sum>(param: &[T]) -> T {
@@ -44,19 +44,20 @@ pub fn rastrigin_a<T: Float + FromPrimitive + Sum>(param: &[T], a: T) -> T {
 }
 
 mod tests {
-    use super::{rastrigin, rastrigin_a};
-    use std;
+    // use super::{rastrigin, rastrigin_a};
+    // use std;
 
     #[test]
     fn test_rastrigin_optimum() {
-        assert!(rastrigin(&[0.0_f32, 0.0_f32]).abs() < std::f32::EPSILON);
-        assert!(rastrigin(&[0.0_f64, 0.0_f64]).abs() < std::f64::EPSILON);
+        assert!(::rastrigin(&[0.0_f32, 0.0_f32]).abs() < ::std::f32::EPSILON);
+        assert!(::rastrigin(&[0.0_f64, 0.0_f64]).abs() < ::std::f64::EPSILON);
     }
 
     #[test]
     fn test_parameter_a() {
         assert!(
-            rastrigin(&[0.0_f32, 0.0_f32]).abs() == rastrigin_a(&[0.0_f32, 0.0_f32], 10.0).abs()
+            ::rastrigin(&[0.0_f32, 0.0_f32]).abs()
+                == ::rastrigin_a(&[0.0_f32, 0.0_f32], 10.0).abs()
         );
     }
 }

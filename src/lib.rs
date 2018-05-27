@@ -9,10 +9,12 @@
 
 extern crate num;
 
+mod rastrigin;
 mod rosenbrock;
 mod sphere;
 mod zero;
 
+pub use rastrigin::*;
 pub use rosenbrock::*;
 pub use sphere::*;
 pub use zero::*;

@@ -27,6 +27,14 @@ macro_rules! make_bench {
 mod tests {
     use test::{black_box, Bencher};
 
+    make_bench!(ackley(&vec![-43.0, 53.0, 3.4]));
+    make_bench!(ackley_param(
+        &vec![-43.0, 53.0, 3.4],
+        20.0,
+        0.2,
+        2.0 * ::std::f64::consts::PI
+    ));
+
     make_bench!(rastrigin(&vec![-43.0, 53.0, 3.4]));
     make_bench!(rastrigin_a(&vec![-43.0, 53.0, 3.4], 10.0));
 

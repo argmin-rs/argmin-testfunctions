@@ -18,6 +18,10 @@
 <span id="18">18</span>
 <span id="19">19</span>
 <span id="20">20</span>
+<span id="21">21</span>
+<span id="22">22</span>
+<span id="23">23</span>
+<span id="24">24</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright 2018 Stefan Kroboth</span>
 <span class="comment">//</span>
@@ -30,11 +34,15 @@
 
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">num</span>;
 
+<span class="kw">mod</span> <span class="ident">ackley</span>;
+<span class="kw">mod</span> <span class="ident">beale</span>;
 <span class="kw">mod</span> <span class="ident">rastrigin</span>;
 <span class="kw">mod</span> <span class="ident">rosenbrock</span>;
 <span class="kw">mod</span> <span class="ident">sphere</span>;
 <span class="kw">mod</span> <span class="ident">zero</span>;
 
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">ackley</span>::<span class="kw-2">*</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">beale</span>::<span class="kw-2">*</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">rastrigin</span>::<span class="kw-2">*</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">rosenbrock</span>::<span class="kw-2">*</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">sphere</span>::<span class="kw-2">*</span>;

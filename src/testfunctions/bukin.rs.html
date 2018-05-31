@@ -54,25 +54,25 @@
 <span class="comment">// http://opensource.org/licenses/MIT&gt;, at your option. This file may not be</span>
 <span class="comment">// copied, modified, or distributed except according to those terms.</span>
 
-<span class="doccomment">//! # Bukin test function Nr. 6</span>
+<span class="doccomment">//! # Bukin test function No. 6</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! Defined as</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! `f(x_1, x_2) = 100*\sqrt{|x_2 - 0.01*x_1^2|} + 0.01 * |x_1 + 10|`</span>
 <span class="doccomment">//!</span>
-<span class="doccomment">//! where `x_1 \in [-15, 5]` and `x_2 \in [-3, 3]`.</span>
+<span class="doccomment">//! where `x_1 \in [-15, -5]` and `x_2 \in [-3, 3]`.</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! The global minimum is at `f(x_1, x_2) = f(-10, 1) = 0`.</span>
 
 <span class="kw">use</span> <span class="ident">num</span>::{<span class="ident">Float</span>, <span class="ident">FromPrimitive</span>};
 
-<span class="doccomment">/// Bukin test function Nr. 6</span>
+<span class="doccomment">/// Bukin test function No. 6</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// Defined as</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// `f(x_1, x_2) = 100*\sqrt{|x_2 - 0.01*x_1^2|} + 0.01 * |x_1 + 10|`</span>
 <span class="doccomment">///</span>
-<span class="doccomment">/// where `x_1 \in [-15, 5]` and `x_2 \in [-3, 3]`.</span>
+<span class="doccomment">/// where `x_1 \in [-15, -5]` and `x_2 \in [-3, 3]`.</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// The global minimum is at `f(x_1, x_2) = f(-10, 1) = 0`.</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">bukin_n6</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">Float</span> <span class="op">+</span> <span class="ident">FromPrimitive</span><span class="op">&gt;</span>(<span class="ident">param</span>: <span class="kw-2">&amp;</span>[<span class="ident">T</span>]) <span class="op">-&gt;</span> <span class="ident">T</span> {

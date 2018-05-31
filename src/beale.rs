@@ -37,10 +37,15 @@ pub fn beale<T: Float + FromPrimitive>(param: &[T]) -> T {
 }
 
 mod tests {
-
     #[test]
     fn test_beale_optimum() {
         assert!(::beale(&[3.0_f32, 0.5_f32]).abs() < ::std::f32::EPSILON);
         assert!(::beale(&[3.0_f64, 0.5_f64]).abs() < ::std::f64::EPSILON);
+    }
+
+    #[test]
+    #[should_panic]
+    fn test_beale_param_length() {
+        ::beale(&[0.0_f32, -1.0_f32, 0.1_f32]);
     }
 }

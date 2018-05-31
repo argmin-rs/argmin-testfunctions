@@ -44,6 +44,11 @@
 <span id="44">44</span>
 <span id="45">45</span>
 <span id="46">46</span>
+<span id="47">47</span>
+<span id="48">48</span>
+<span id="49">49</span>
+<span id="50">50</span>
+<span id="51">51</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright 2018 Stefan Kroboth</span>
 <span class="comment">//</span>
@@ -84,11 +89,16 @@
 }
 
 <span class="kw">mod</span> <span class="ident">tests</span> {
-
     <span class="attribute">#[<span class="ident">test</span>]</span>
     <span class="kw">fn</span> <span class="ident">test_beale_optimum</span>() {
         <span class="macro">assert</span><span class="macro">!</span>(::<span class="ident">beale</span>(<span class="kw-2">&amp;</span>[<span class="number">3.0_f32</span>, <span class="number">0.5_f32</span>]).<span class="ident">abs</span>() <span class="op">&lt;</span> ::<span class="ident">std</span>::<span class="ident">f32</span>::<span class="ident">EPSILON</span>);
         <span class="macro">assert</span><span class="macro">!</span>(::<span class="ident">beale</span>(<span class="kw-2">&amp;</span>[<span class="number">3.0_f64</span>, <span class="number">0.5_f64</span>]).<span class="ident">abs</span>() <span class="op">&lt;</span> ::<span class="ident">std</span>::<span class="ident">f64</span>::<span class="ident">EPSILON</span>);
+    }
+
+    <span class="attribute">#[<span class="ident">test</span>]</span>
+    <span class="attribute">#[<span class="ident">should_panic</span>]</span>
+    <span class="kw">fn</span> <span class="ident">test_beale_param_length</span>() {
+        ::<span class="ident">beale</span>(<span class="kw-2">&amp;</span>[<span class="number">0.0_f32</span>, <span class="op">-</span><span class="number">1.0_f32</span>, <span class="number">0.1_f32</span>]);
     }
 }
 </pre>

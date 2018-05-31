@@ -5,25 +5,25 @@
 // http://opensource.org/licenses/MIT>, at your option. This file may not be
 // copied, modified, or distributed except according to those terms.
 
-//! # Bukin test function Nr. 6
+//! # Bukin test function No. 6
 //!
 //! Defined as
 //!
 //! `f(x_1, x_2) = 100*\sqrt{|x_2 - 0.01*x_1^2|} + 0.01 * |x_1 + 10|`
 //!
-//! where `x_1 \in [-15, 5]` and `x_2 \in [-3, 3]`.
+//! where `x_1 \in [-15, -5]` and `x_2 \in [-3, 3]`.
 //!
 //! The global minimum is at `f(x_1, x_2) = f(-10, 1) = 0`.
 
 use num::{Float, FromPrimitive};
 
-/// Bukin test function Nr. 6
+/// Bukin test function No. 6
 ///
 /// Defined as
 ///
 /// `f(x_1, x_2) = 100*\sqrt{|x_2 - 0.01*x_1^2|} + 0.01 * |x_1 + 10|`
 ///
-/// where `x_1 \in [-15, 5]` and `x_2 \in [-3, 3]`.
+/// where `x_1 \in [-15, -5]` and `x_2 \in [-3, 3]`.
 ///
 /// The global minimum is at `f(x_1, x_2) = f(-10, 1) = 0`.
 pub fn bukin_n6<T: Float + FromPrimitive>(param: &[T]) -> T {

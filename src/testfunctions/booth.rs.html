@@ -85,7 +85,7 @@
 <span class="kw">mod</span> <span class="ident">tests</span> {
     <span class="attribute">#[<span class="ident">test</span>]</span>
     <span class="kw">fn</span> <span class="ident">test_booth_optimum</span>() {
-        <span class="macro">assert</span><span class="macro">!</span>((::<span class="ident">booth</span>(<span class="kw-2">&amp;</span>[<span class="number">1_f32</span>, <span class="number">3_f32</span>])) <span class="op">&lt;</span> ::<span class="ident">std</span>::<span class="ident">f32</span>::<span class="ident">EPSILON</span>);
+        <span class="macro">assert</span><span class="macro">!</span>((::<span class="ident">booth</span>(<span class="kw-2">&amp;</span>[<span class="number">1_f32</span>, <span class="number">3_f32</span>])).<span class="ident">abs</span>() <span class="op">&lt;</span> ::<span class="ident">std</span>::<span class="ident">f32</span>::<span class="ident">EPSILON</span>);
         <span class="macro">assert</span><span class="macro">!</span>((::<span class="ident">booth</span>(<span class="kw-2">&amp;</span>[<span class="number">1_f64</span>, <span class="number">3_f64</span>])).<span class="ident">abs</span>() <span class="op">&lt;</span> ::<span class="ident">std</span>::<span class="ident">f64</span>::<span class="ident">EPSILON</span>);
     }
 

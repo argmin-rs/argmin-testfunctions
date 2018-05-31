@@ -39,6 +39,8 @@ mod tests {
 
     make_bench!(goldsteinprice(&vec![-4.0, 3.0]));
 
+    make_bench!(picheny(&vec![0.5, 0.9]));
+
     make_bench!(rastrigin(&vec![-43.0, 53.0, 3.4]));
     make_bench!(rastrigin_a(&vec![-43.0, 53.0, 3.4], 10.0));
 

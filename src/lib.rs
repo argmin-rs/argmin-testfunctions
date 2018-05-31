@@ -11,6 +11,7 @@ extern crate num;
 
 mod ackley;
 mod beale;
+mod goldsteinprice;
 mod rastrigin;
 mod rosenbrock;
 mod sphere;
@@ -18,6 +19,7 @@ mod zero;
 
 pub use ackley::*;
 pub use beale::*;
+pub use goldsteinprice::*;
 pub use rastrigin::*;
 pub use rosenbrock::*;
 pub use sphere::*;

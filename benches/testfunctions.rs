@@ -37,6 +37,8 @@ mod tests {
 
     make_bench!(beale(&vec![-4.0, 3.0]));
 
+    make_bench!(booth(&vec![-4.0, 3.0]));
+
     make_bench!(goldsteinprice(&vec![-4.0, 3.0]));
 
     make_bench!(picheny(&vec![0.5, 0.9]));

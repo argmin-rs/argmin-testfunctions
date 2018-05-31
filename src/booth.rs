@@ -36,7 +36,7 @@ pub fn booth<T: Float + FromPrimitive>(param: &[T]) -> T {
 mod tests {
     #[test]
     fn test_booth_optimum() {
-        assert!((::booth(&[1_f32, 3_f32])) < ::std::f32::EPSILON);
+        assert!((::booth(&[1_f32, 3_f32])).abs() < ::std::f32::EPSILON);
         assert!((::booth(&[1_f64, 3_f64])).abs() < ::std::f64::EPSILON);
     }
 

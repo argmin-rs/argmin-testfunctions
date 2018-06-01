@@ -43,6 +43,8 @@ mod tests {
 
     make_bench!(goldsteinprice(&vec![-4.0, 3.0]));
 
+    make_bench!(levy(&vec![-4.0, 3.0, 1.0, 2.0, 3.0, 4.0, 5.0]));
+
     make_bench!(matyas(&vec![-4.0, 3.0]));
 
     make_bench!(picheny(&vec![0.5, 0.9]));

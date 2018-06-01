@@ -59,7 +59,7 @@ pub fn levy<T: Float + FromPrimitive + Sum>(param: &[T]) -> T {
         + (w(param[plen - 1]) - n1).powi(2) * (n1 + (n2 * pi * w(param[plen - 1])).sin().powi(2))
 }
 
-/// # Levy test function No. 13
+/// Levy test function No. 13
 ///
 /// Defined as
 ///

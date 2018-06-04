@@ -21,6 +21,7 @@ mod picheny;
 mod rastrigin;
 mod rosenbrock;
 mod sphere;
+mod threehumpcamel;
 mod zero;
 
 pub use ackley::*;
@@ -35,4 +36,5 @@ pub use picheny::*;
 pub use rastrigin::*;
 pub use rosenbrock::*;
 pub use sphere::*;
+pub use threehumpcamel::*;
 pub use zero::*;

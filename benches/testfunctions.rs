@@ -64,6 +64,8 @@ mod tests {
     make_bench!(sphere(&vec![-43.0, 53.0]));
     make_bench!(sphere_derivative(&vec![-43.0, 53.0]));
 
+    make_bench!(threehumpcamel(&vec![-43.0, 53.0]));
+
     make_bench!(zero(&vec![-43.0, 53.0]));
     make_bench!(zero_derivative(&vec![-43.0, 53.0]));
 }

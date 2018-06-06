@@ -41,6 +41,8 @@ mod tests {
 
     make_bench!(bukin_n6(&vec![-4.0, 3.0]));
 
+    make_bench!(cross_in_tray(&vec![-4.0, 3.0]));
+
     make_bench!(easom(&vec![-4.0, 3.0]));
 
     make_bench!(goldsteinprice(&vec![-4.0, 3.0]));

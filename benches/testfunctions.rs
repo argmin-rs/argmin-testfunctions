@@ -45,6 +45,8 @@ mod tests {
 
     make_bench!(easom(&vec![-4.0, 3.0]));
 
+    make_bench!(eggholder(&vec![-4.0, 3.0]));
+
     make_bench!(goldsteinprice(&vec![-4.0, 3.0]));
 
     make_bench!(himmelblau(&vec![-4.0, 3.0]));

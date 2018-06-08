@@ -51,6 +51,8 @@ mod tests {
 
     make_bench!(himmelblau(&vec![-4.0, 3.0]));
 
+    make_bench!(holder_table(&vec![-4.0, 3.0]));
+
     make_bench!(levy(&vec![-4.0, 3.0, 1.0, 2.0, 3.0, 4.0, 5.0]));
 
     make_bench!(levy_n13(&vec![-4.0, 3.0]));

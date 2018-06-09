@@ -22,7 +22,7 @@
 use num::{Float, FromPrimitive};
 use std::f64::consts::PI;
 
-/// # Holder table test function
+/// Holder table test function
 ///
 /// Defined as
 ///

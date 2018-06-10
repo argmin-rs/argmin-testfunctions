@@ -38,7 +38,8 @@ mod tests {
     #[test]
     fn test_mccorminck_optimum() {
         assert!(
-            (::mccorminck(&[-0.54719_f32, -1.54719_f32]) + 1.9132228_f32).abs() < ::std::f32::EPSILON
+            (::mccorminck(&[-0.54719_f32, -1.54719_f32]) + 1.9132228_f32).abs()
+                < ::std::f32::EPSILON
         );
     }
 

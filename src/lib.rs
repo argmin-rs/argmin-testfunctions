@@ -27,6 +27,7 @@ mod rastrigin;
 mod rosenbrock;
 mod schaffer;
 mod sphere;
+mod styblinskitang;
 mod threehumpcamel;
 mod zero;
 
@@ -48,5 +49,6 @@ pub use rastrigin::*;
 pub use rosenbrock::*;
 pub use schaffer::*;
 pub use sphere::*;
+pub use styblinskitang::*;
 pub use threehumpcamel::*;
 pub use zero::*;

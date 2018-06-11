@@ -74,6 +74,8 @@ mod tests {
     make_bench!(sphere(&vec![-43.0, 53.0]));
     make_bench!(sphere_derivative(&vec![-43.0, 53.0]));
 
+    make_bench!(styblinski_tang(&vec![-43.0, 53.0]));
+
     make_bench!(schaffer_n2(&vec![-43.0, 53.0]));
     make_bench!(schaffer_n4(&vec![-43.0, 53.0]));
 

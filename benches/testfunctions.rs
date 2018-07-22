@@ -8,9 +8,9 @@
 #![feature(test)]
 #![feature(concat_idents)]
 
+extern crate argmin_testfunctions;
 extern crate test;
-extern crate testfunctions;
-use testfunctions::*;
+use argmin_testfunctions::*;
 
 macro_rules! make_bench {
     ($f:ident($($x:expr),*)) => {

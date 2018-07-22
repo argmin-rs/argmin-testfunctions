@@ -1,12 +1,12 @@
 [package]
-name = "testfunctions"
+name = "argmin_testfunctions"
 version = "0.0.0"
 authors = ["Stefan Kroboth <stefan.kroboth@gmail.com>"]
 license = "MIT OR Apache-2.0"
 description = "Test functions for optimization algorithms"
-documentation = "https://stefan-k.github.io/testfunctions-rs/testfunctions/"
-homepage = "https://github.com/stefan-k/testfunctions-rs"
-repository = "https://github.com/stefan-k/testfunctions-rs"
+documentation = "https://stefan-k.github.io/testfunctions-rs/TODO/"
+homepage = "https://github.com/stefan-k/TODO-rs"
+repository = "https://github.com/stefan-k/TODO-rs"
 readme = "README.md"
 keywords = ["test", "function", "optimization"]
 categories = ["science", "hpc"]

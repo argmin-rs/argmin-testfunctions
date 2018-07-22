@@ -20,6 +20,7 @@
 //! The minimum is at `f(x_1, x_2, ..., x_n) = f(1, 1, ..., 1) = 0`.
 
 use num::{Float, FromPrimitive};
+use std::fmt::Debug;
 use std::iter::Sum;
 
 /// Multidimensional Rosenbrock test function
@@ -31,10 +32,10 @@ use std::iter::Sum;
 /// where `x_i \in (-\infty, \infty)`. The parameters a and b usually are: `a = 1` and `b = 100`.
 ///
 /// The global minimum is at `f(x_1, x_2, ..., x_n) = f(1, 1, ..., 1) = 0`.
-pub fn rosenbrock<T: Float + FromPrimitive + Sum>(param: &[T], a: T, b: T) -> T {
+pub fn rosenbrock<T: Float + FromPrimitive + Sum + Debug>(param: &[T], a: T, b: T) -> T {
     param
         .iter()
-        .zip(param.iter().next())
+        .zip(param.iter().skip(1))
         .map(|(&xi, &xi1)| (a - xi).powi(2) + b * (xi1 - xi.powi(2)).powi(2))
         .sum()
 }

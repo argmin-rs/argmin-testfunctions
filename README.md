@@ -1,10 +1,10 @@
-[![Build Status](https://travis-ci.org/stefan-k/testfunctions-rs.svg?branch=master)](https://travis-ci.org/stefan-k/testfunctions-rs)
+[![Build Status](https://travis-ci.org/argmin-rs/argmin-testfunctions.svg?branch=master)](https://travis-ci.org/argmin-rs/argmin-testfunctions)
 
-# testfunctions-rs
+# argmin-testfunctions
 
 Test functions for optimization algorithms in Rust. WIP.
 
-[Documentation](https://stefan-k.github.io/testfunctions-rs/testfunctions/).
+[Documentation](https://argmin-rs.github.io/argmin-testfunctions/argmin_testfunctions/).
 
 
 ## License

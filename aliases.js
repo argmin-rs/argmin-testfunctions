@@ -1,2 +1,2 @@
 var ALIASES = {};
-ALIASES['testfunctions'] = {};
+ALIASES['argmin_testfunctions'] = {};

@@ -1,12 +1,12 @@
 [package]
 name = "argmin_testfunctions"
-version = "0.0.0"
+version = "0.1.0"
 authors = ["Stefan Kroboth <stefan.kroboth@gmail.com>"]
 license = "MIT OR Apache-2.0"
 description = "Test functions for optimization algorithms"
-documentation = "https://stefan-k.github.io/testfunctions-rs/TODO/"
-homepage = "https://github.com/stefan-k/TODO-rs"
-repository = "https://github.com/stefan-k/TODO-rs"
+documentation = "https://argmin-rs.github.io/argmin-testfunctions/argmin_testfunctions/"
+homepage = "https://github.com/argmin-rs/argmin-testfunctions"
+repository = "https://github.com/argmin-rs/argmin-testfunctions"
 readme = "README.md"
 keywords = ["test", "function", "optimization"]
 categories = ["science", "hpc"]
@@ -17,7 +17,7 @@ exclude = [
 ]
 
 [dependencies]
-num = "*"
+num = "0.2.0"
 
 [badges]
-travis-ci = { repository = "stefan-k/pcde-rs", branch = "master" }
+travis-ci = { repository = "argmin-rs/argmin-testfunctions", branch = "master" }

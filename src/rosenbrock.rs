@@ -52,7 +52,7 @@ pub fn rosenbrock<T: Float + FromPrimitive + Sum + Debug>(param: &[T], a: T, b: 
 ///
 /// The global minimum is at `f(x_1, x_2) = f(1, 1) = 0`.
 pub fn rosenbrock_2d<T: Float + FromPrimitive>(param: &[T], a: T, b: T) -> T {
-    if let &[x, y] = param {
+    if let [x, y] = *param {
         (a - x).powi(2) + b * (y - x.powi(2)).powi(2)
     } else {
         panic!("rosenbrock_2d only works for a parameter vector with two values.");
@@ -63,7 +63,7 @@ pub fn rosenbrock_2d<T: Float + FromPrimitive>(param: &[T], a: T, b: T) -> T {
 pub fn rosenbrock_2d_derivative<T: Float + FromPrimitive>(param: &[T], a: T, b: T) -> Vec<T> {
     let num2 = T::from_f64(2.0).unwrap();
     let num4 = T::from_f64(4.0).unwrap();
-    if let &[x, y] = param {
+    if let [x, y] = *param {
         let mut out = Vec::with_capacity(2);
         out.push(-num2 * a + num4 * b * x.powi(3) - num4 * b * x * y + num2 * x);
         out.push(num2 * b * (y - x.powi(2)));
@@ -78,7 +78,7 @@ pub fn rosenbrock_2d_hessian<T: Float + FromPrimitive>(param: &[T], _a: T, b: T)
     let num2 = T::from_f64(2.0).unwrap();
     let num4 = T::from_f64(4.0).unwrap();
     let num12 = T::from_f64(12.0).unwrap();
-    if let &[x, y] = param {
+    if let [x, y] = *param {
         let mut out = Vec::with_capacity(4);
         // d/dxdx
         out.push(num12 * b * x.powi(2) - num4 * b * y + num2);

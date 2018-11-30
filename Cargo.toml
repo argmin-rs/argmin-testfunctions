@@ -9,7 +9,7 @@ homepage = "https://github.com/argmin-rs/argmin-testfunctions"
 repository = "https://github.com/argmin-rs/argmin-testfunctions"
 readme = "README.md"
 keywords = ["test", "function", "optimization"]
-categories = ["science", "hpc"]
+categories = ["science"]
 #license-file = "LICENSE-APACHE"
 exclude = [ 
 	".travis.yml",

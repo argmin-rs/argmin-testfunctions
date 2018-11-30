@@ -2,7 +2,7 @@
 
 # argmin-testfunctions
 
-Test functions for optimization algorithms in Rust. WIP.
+Test functions for optimization algorithms in Rust.
 
 [Documentation](https://argmin-rs.github.io/argmin-testfunctions/argmin_testfunctions/).
 

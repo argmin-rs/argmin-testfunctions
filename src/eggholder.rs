@@ -1,4 +1,4 @@
-// Copyright 2018 Stefan Kroboth
+// Copyright 2018-2020 argmin developers
 //
 // Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
 // http://apache.org/licenses/LICENSE-2.0> or the MIT license <LICENSE-MIT or
@@ -36,7 +36,8 @@ pub fn eggholder<T: Float + FromPrimitive>(param: &[T]) -> T {
         * (x2 + x1 / T::from_f64(2.0).unwrap() + n47)
             .abs()
             .sqrt()
-            .sin() - x1 * (x1 - (x2 + n47)).abs().sqrt().sin()
+            .sin()
+        - x1 * (x1 - (x2 + n47)).abs().sqrt().sin()
 }
 
 mod tests {

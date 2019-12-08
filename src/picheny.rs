@@ -1,4 +1,4 @@
-// Copyright 2018 Stefan Kroboth
+// Copyright 2018-2020 argmin developers
 //
 // Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
 // http://apache.org/licenses/LICENSE-2.0> or the MIT license <LICENSE-MIT or
@@ -55,7 +55,8 @@ pub fn picheny<T: Float + FromPrimitive>(param: &[T]) -> T {
                         + T::from_f64(48.0).unwrap() * x2
                         - T::from_f64(36.0).unwrap() * x1 * x2
                         + T::from_f64(27.0).unwrap() * x2.powi(2))))
-            .log10() - T::from_f64(8.693).unwrap())
+        .log10()
+            - T::from_f64(8.693).unwrap())
 }
 
 mod tests {

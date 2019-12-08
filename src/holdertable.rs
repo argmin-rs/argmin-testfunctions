@@ -1,4 +1,4 @@
-// Copyright 2018 Stefan Kroboth
+// Copyright 2018-2020 argmin developers
 //
 // Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
 // http://apache.org/licenses/LICENSE-2.0> or the MIT license <LICENSE-MIT or
@@ -39,11 +39,12 @@ pub fn holder_table<T: Float + FromPrimitive>(param: &[T]) -> T {
     assert!(param.len() == 2);
     let (x1, x2) = (param[0], param[1]);
     let pi = T::from_f64(PI).unwrap();
-    -(x1.sin() * x2.cos()
+    -(x1.sin()
+        * x2.cos()
         * (T::from_f64(1.0).unwrap() - (x1.powi(2) + x2.powi(2)).sqrt() / pi)
             .abs()
             .exp())
-        .abs()
+    .abs()
 }
 
 mod tests {

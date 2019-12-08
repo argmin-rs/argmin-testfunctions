@@ -1,4 +1,4 @@
-// Copyright 2018 Stefan Kroboth
+// Copyright 2018-2020 argmin developers
 //
 // Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
 // http://apache.org/licenses/LICENSE-2.0> or the MIT license <LICENSE-MIT or
@@ -43,9 +43,9 @@ mod tests {
     #[test]
     fn test_styblinski_tang_optimum() {
         assert!(
-            (::styblinski_tang(&[-2.903534_f32, -2.903534_f32, -2.903534_f32])
-                + 117.49849_f32)
-                .abs() < ::std::f32::EPSILON
+            (::styblinski_tang(&[-2.903534_f32, -2.903534_f32, -2.903534_f32]) + 117.49849_f32)
+                .abs()
+                < ::std::f32::EPSILON
         );
     }
 }

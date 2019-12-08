@@ -1,4 +1,4 @@
-// Copyright 2018 Stefan Kroboth
+// Copyright 2018-2020 argmin developers
 //
 // Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
 // http://apache.org/licenses/LICENSE-2.0> or the MIT license <LICENSE-MIT or
@@ -46,7 +46,9 @@ pub fn ackley_param<T: Float + FromPrimitive + Sum>(param: &[T], a: T, b: T, c: 
     let num1 = T::from_f64(1.0).unwrap();
     let n = T::from_usize(param.len()).unwrap();
     -a * (-b * ((num1 / n) * param.iter().map(|x| x.powi(2)).sum()).sqrt()).exp()
-        - ((num1 / n) * param.iter().map(|x| (c * *x).cos()).sum()).exp() + a + num1.exp()
+        - ((num1 / n) * param.iter().map(|x| (c * *x).cos()).sum()).exp()
+        + a
+        + num1.exp()
 }
 
 mod tests {
@@ -68,7 +70,8 @@ mod tests {
                     20.0,
                     0.2,
                     2.0 * ::std::f64::consts::PI
-                ).abs()
+                )
+                .abs()
         );
     }
 }

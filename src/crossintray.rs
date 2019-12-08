@@ -1,4 +1,4 @@
-// Copyright 2018 Stefan Kroboth
+// Copyright 2018-2020 argmin developers
 //
 // Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
 // http://apache.org/licenses/LICENSE-2.0> or the MIT license <LICENSE-MIT or
@@ -48,7 +48,8 @@ pub fn cross_in_tray(param: &[f64]) -> f64 {
     //         .abs() + T::from_f64(1.0).unwrap())
     //         .powf(T::from_f64(0.1).unwrap())
     -0.0001
-        * ((x1.sin() * x2.sin() * (100.0 - (x1.powi(2) + x2.powi(2)).sqrt() / PI).abs().exp()).abs()
+        * ((x1.sin() * x2.sin() * (100.0 - (x1.powi(2) + x2.powi(2)).sqrt() / PI).abs().exp())
+            .abs()
             + 1.0)
             .powf(0.1)
 }

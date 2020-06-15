@@ -16,7 +16,7 @@ exclude = [
 ]
 
 [dependencies]
-num = "0.2.0"
+num = "0.3.0"
 
 [badges]
 travis-ci = { repository = "argmin-rs/argmin-testfunctions", branch = "master" }
